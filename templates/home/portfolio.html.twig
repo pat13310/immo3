@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block right %}
+    <div class="mt-3 px-3 p-2 bgo-80 card2 rounded">
+        <h1>Portfolio</h1>
+        <div class="jumbotron">
+            <h4 class="display-6">Quelques exemples...</h4>
+            <p class="text-white">Explorez mon portfolio pour découvrir une palette variée d'applications, conçues
+                avec expertise à l'aide de multiples langages. De la création d'applications web élégantes à des
+                solutions robustes en backend, je donne vie à des idées avec précision et passion.</p>
+            <p class="text-light">Découvrez comment j'ai utilisé divers langages pour concrétiser des projets
+                innovants et fonctionnels.</p>
+        </div>
+    </div>
+    <div class="frameMain">
+        <div class="frameGrid">
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block extrajs %}
+    <script type="text/javascript" src="assets/js/common.js"></script>
+    <script type="text/javascript" src="assets/js/folio.js"></script>
+    <script type="text/javascript">
+        loadFolios('data/folios.json');
+        loadDefaultLogo();
+    </script>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les images{% endblock %}
+
+{% block right %}
+    <div class="mt-3 px-3 p-2 bgo-80 card2 rounded">
+        <h1>Gestion des images</h1>
+        <div class="jumbotron">
+            <h4 class="display-6">Sélectionnez un moyen pour télécharger vos images</h4>
+        </div>
+    </div>
+    <div class="col-5">
+        {% include('partials/formimage.html.twig') %}
+    </div>
+
+{% endblock %}
+
+{% block extrajs %}
+    <script type="text/javascript" src="{{ asset('assets/js/common.js') }}"></script>
+    <script type="text/javascript">
+        let dropArea = document.getElementById('drop-area');
+        let imagePreview = document.getElementById('image');
+        let message = document.getElementById('message');
+        let inputfile = document.getElementById('image_inputfile');
+        const MAX_SIZE = 2 * 1024 * 1024;
+
+        function dropHandler(event) {
+            event.preventDefault();
+            let files = event.dataTransfer.files;
+            if (files.length > 0) {
+                const imageFile = files[0];
+                loadPreview(imageFile);
+                inputfile.value = imageFile.name;
+            }
+        }
+
+        function dragOverHandler(event) {
+            event.preventDefault();
+        }
+
+        inputfile.addEventListener('change', function (event) {
+                const imageFile = event.target.files[0];
+                loadPreview(imageFile);
+            }
+        );
+
+        function loadPreview(imageFile) {
+            if (imageFile) {
+                if (imageFile.size > MAX_SIZE) {
+                    alert('La taille du fichier dépasse 2 méga octets!');
+                    message.classList.remove('collapse');
+                    imagePreview.classList.add('collapse');
+                    inputfile.value = "";
+                    return;
+                }
+                if (imageFile.type.match('image.*')) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        message.classList.add('collapse');
+                        imagePreview.classList.remove('collapse');
+                        imagePreview.src = e.target.result;
+                    };
+                    reader.readAsDataURL(imageFile);
+                } else {
+                    message.classList.remove('collapse');
+                    imagePreview.classList.add('collapse');
+                }
+            }
+        }
+
+    </script>
+{% endblock %}

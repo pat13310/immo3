@@ -1,0 +1,198 @@
+html, body {
+
+    position: relative;
+    width: 100%;
+    /*overflow:hidden;*/
+    background: url("../images/xbase.jpg") no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    color: lightgray !important;
+}
+
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    margin-bottom: 8px;
+}
+
+
+/* scrollbar custom styles */
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(darkgray, lightgray);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(darkgray, darkgray);
+}
+
+.frameLeft {
+    position:relative;
+    border: 1px solid white;
+    border-radius: 12px;
+    box-shadow: 2px 2px 8px black;
+    background: linear-gradient(0deg, #fffff03b, #fffff026);
+    margin-top: 7px;
+    margin-bottom: 8px;
+    margin-left: 2px;
+    height:98vh;
+}
+
+.frameRight {
+    height: inherit;
+}
+
+.frameLeft ul {
+    list-style-type: none;
+    color: white;
+    margin-left: 10px;
+    margin-top: 10px;
+    line-height: 28px;
+    font-size: 1.4vw;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.frameLeft ul a {
+    text-decoration: none;
+    color: #dadada;
+}
+
+.frameLeft ul a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+
+hr {
+    margin: 8px 0 !important;
+    color: #2fafe7 !important;
+    opacity: 0.8 !important;
+}
+
+.display-6 {
+    font-size: 1.25rem !important;
+}
+
+.frameGrid {
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 5px 0;
+    /*grid-template-rows: repeat(7, 1fr);*/
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
+}
+
+.frameMain {
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid white;
+    border-radius: 12px;
+    box-shadow: 2px 2px 8px black;
+    background: linear-gradient(0deg, #00000091, #000);
+    margin-bottom: 8px;
+}
+
+.folio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px auto;
+    color: lightgray;
+    padding: 4px;
+    text-align: center;
+    width: 190px;
+    height: 175px;
+    overflow-y: hidden;
+    border: 0.25px solid lightgray;
+    border-radius: 12px;
+    box-shadow: 2px 2px 8px black;
+    background: linear-gradient(#00000091, rgb(128, 128, 128));
+}
+
+.folio:hover {
+    color: whitesmoke;
+    border: 0.25px solid white;
+    cursor: pointer;
+}
+
+.folio img {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    width: 20%;
+    height: 20%;
+}
+
+.scale {
+    transition: scale 0.4s;
+}
+
+.folio:hover .scale {
+    scale: 1.2;
+}
+
+.text-light, .text-white {
+    color: #cecccc !important;
+}
+
+.bg-opaque75, .bgo-75 {
+    --bs-bg-opacity: 0.65;
+    background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-opaque80, .bgo-80 {
+    --bs-bg-opacity: 0.75;
+    background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-opaque85, .bgo-85 {
+    --bs-bg-opacity: 0.85;
+    background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.custom-control-label {
+    opacity: 1;
+    color: white;
+}
+
+.small, .gray{
+    font-size: 12px;
+    color: whitesmoke;
+    white-space: nowrap;
+    line-height:22px;
+}
+
+.gray{
+    color:lightgray;
+}
+
+.hover, .hover:hover {
+    cursor:pointer;
+}
+
+.ellipsis{
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

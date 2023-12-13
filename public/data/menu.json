@@ -1,0 +1,22 @@
+[
+  {
+    "name": "accueil",
+    "link": "/",
+    "icon": "bi bi-house"
+  },
+  {
+    "name": "portfolio",
+    "link": "/portfolio",
+    "icon": "bi bi-journals"
+  },
+  {
+    "name": "github",
+    "link": "https://github.com/",
+    "icon": "bi bi-github"
+  },
+  {
+    "name": "A propos de",
+    "link": "/about",
+    "icon": "bi bi-info-circle"
+  }
+]
